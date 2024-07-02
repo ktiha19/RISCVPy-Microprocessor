@@ -3,9 +3,9 @@
 module register_file_test();
 
   // for all of your input pins, declare them as type reg, and name them identically to the pins
-  reg [2:0] SA;  // 3-bit addresses
-  reg [2:0] SB;  // 3-bit addresses
-  reg [2:0] DR;  // 3-bit addresses
+  reg [5:0] SA;  // 5-bit addresses
+  reg [5:0] SB;  // 5-bit addresses
+  reg [5:0] DR;  // 5-bit addresses
   reg [31:0] D_IN;  // 32-bit data words
   reg LD;
 
@@ -40,9 +40,9 @@ module register_file_test();
   initial begin
       // it includes input values...
       LD = 1'b1;
-      SA = 3'bx;
-      SB = 3'bx;
-      DR = 3'b000;
+      SA = 5'bx;
+      SB = 5'bx;
+      DR = 5'b000;
       D_IN = 32'd123;
       
       #100;  // wait for input signals to propagate through circuit
@@ -51,9 +51,9 @@ module register_file_test();
 
 
       LD = 1'b0;
-      SA = 3'b000;
-      SB = 3'b001;
-      DR = 3'b000;
+      SA = 5'b000;
+      SB = 5'b001;
+      DR = 5'b000;
       D_IN = 32'd123;
 
       #100;  // wait for input signals to propagate through circuit
