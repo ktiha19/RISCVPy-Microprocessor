@@ -1,9 +1,9 @@
 module register_file(CLK, LD, SA, SB, DR, D_IN, DATA_A, DATA_B);
 	input CLK;
 	input LD;
-	input [2:0] SA;  // 3-bit addresses
-	input [2:0] SB;  // 3-bit addresses
-	input [2:0] DR;  // 3-bit addresses
+	input [4:0] SA;  // 5-bit addresses
+	input [4:0] SB;  // 5-bit addresses
+	input [4:0] DR;  // 5-bit addresses
 	input [31:0] D_IN;  // 32-bit data words
 	
 	wire CLK;
