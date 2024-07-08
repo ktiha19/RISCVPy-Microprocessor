@@ -1,12 +1,12 @@
-module logical(A, B, FUNCT_THREE, Y):
+module logical(A, B, FC, Y):
 	
 	//inputs
 	input [31:0] A, B;
-   input [3:0] FUNCT_THREE;
+   input [2:0] FC;
 	
 	//output
 	output wire [31:0] Y;
 	
-	assign Y = (FUNCT_THREE == 3'h4) ? A ^ B : (FUNCT_THREE == 3'h6) ? A | B : A & B;
+	assign Y = (FC == 3'h2) ? A & B : (FC == 3'h3) ? A | B : A ^ B;
 	
 endmodule
