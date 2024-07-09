@@ -19,7 +19,7 @@ module register_file(CLK, LD, SA, SB, DR, D_IN, DATA_A, DATA_B);
 	reg DATA_A;
 	reg DATA_B;
 	
-	reg [31:0] register[0:7];
+	reg [31:0] register[0:31];
 	  
 	integer i;
 	
@@ -32,14 +32,13 @@ module register_file(CLK, LD, SA, SB, DR, D_IN, DATA_A, DATA_B);
 	always @(posedge CLK) begin
 		if (LD  == 1'b1) begin
 			register[DR] <= D_IN;
-	
-	    DATA_A <= 32'bx;
-	    DATA_B <= 32'bx;
+			DATA_A <= 32'bx;
+			DATA_B <= 32'bx;
 		end
 	
 		if (LD  == 1'b0) begin
-	    DATA_A <= register[SA];
-	    DATA_B <= register[SB];
+			DATA_A <= register[SA];
+			DATA_B <= register[SB];
 		end
 	end
 	
