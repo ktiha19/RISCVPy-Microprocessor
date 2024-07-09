@@ -1,8 +1,8 @@
 module logical(A, B, FC, Y):
 	
 	//inputs
-	input [31:0] A, B;
-   input [2:0] FC;
+  input [31:0] A, B;
+  input [2:0] FC;
 	
 	//output
 	output wire [31:0] Y;
