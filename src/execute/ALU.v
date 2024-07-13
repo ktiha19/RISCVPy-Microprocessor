@@ -1,6 +1,6 @@
 module ALU(A, B, FC, OPCODE, Y, C, V, N, Zero):
   input [31:0] A, B;
-  input [3:0]  FC; // Determines add, sub, xor, or, and, etc
+  input [2:0]  FC; // Determines add, sub, xor, or, and, etc
   input [7:0]  OPCODE;
 
   output wire [31:0] Y;
@@ -20,7 +20,8 @@ module ALU(A, B, FC, OPCODE, Y, C, V, N, Zero):
 
   wire [2:0] OSEL; // determines which module Y and C should come from
 
-  assign OSEL = (FC == 3'b000 || FC == 3'b001) ? 0 : (FC == 3'b101 || FC == 3'b110 || FC == 3'b111) ? 1 : 2;
+  assign OSEL = (FC == 3'b000 || FC == 3'b001) ? 0 : (FC == 3'b101 || FC == 3'b110 || FC == 3'b111) ?
+ 1 : 2;
 
   adder ad(
     .A(A),
